@@ -1,6 +1,12 @@
 from flask import Flask
+import subprocess
 app = Flask(__name__)
 
 @app.route('/')
 def hello_calcfiy():
-    return 'Hello, Calcify!'
+    output = subprocess.check_output(['nvidia-smi'], shell=True).decode()
+    lines = output.split('\n')
+    html = ''
+    for line in lines:
+        html += '<div>' + line + '</div>'
+    return html
