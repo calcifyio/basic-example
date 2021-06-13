@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello_calcfiy():
     print(torch)
+    print(torch.cuda)
     n = np.random.randn()
     output = subprocess.check_output(['nvidia-smi'], shell=True).decode()
     lines = output.split('\n')
