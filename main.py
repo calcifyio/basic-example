@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_calcfiy():
-    n = np.random(10)
+    n = np.random.randn()
     output = subprocess.check_output(['nvidia-smi'], shell=True).decode()
     lines = output.split('\n')
     html = 'Hello, Calcify New ' + str(n) + '</br>'
