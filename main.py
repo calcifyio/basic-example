@@ -9,7 +9,7 @@ def hello_calcfiy():
     n = np.random.randn()
     output = subprocess.check_output(['nvidia-smi'], shell=True).decode()
     lines = output.split('\n')
-    html = 'CUDA: ' + str(torch.cuda.is_available()) + ' Hello, Calcify New ' + str(n) + '</br>'
+    html = 'CUDA: ' + str(torch.cuda.is_available()) + '</br>'
     for line in lines:
         html += '<div>' + line + '</div>'
     return html
