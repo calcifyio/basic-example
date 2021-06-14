@@ -1,7 +1,6 @@
 from flask import Flask
 import torch
 import subprocess
-
 app = Flask(__name__)
 
 @app.route('/')
