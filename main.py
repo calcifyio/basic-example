@@ -3,6 +3,7 @@ import torch
 import subprocess
 app = Flask(__name__)
 
+
 @app.route('/')
 def hello_calcfiy():
     output = subprocess.check_output(['nvidia-smi'], shell=True).decode()
